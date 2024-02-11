@@ -78,4 +78,4 @@ This web application uses Flask, BeautifulSoup, jQuery, and DataTables.
 
 *Note: This README provides a comprehensive overview and guide for using the Table Extractor application. It is designed for informational purposes and should not be copied directly for distribution or reproduction.*
 
-![visitors](https://visitor-badge.laobi.icu/badge?page_id=tanmay-kalbande.tanmay-kalbande-table-extractor-app&left_color=teal&right_color=008b8b)
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=tanmay-kalbande/table-extractor-app&left_color=teal&right_color=008b8b)
