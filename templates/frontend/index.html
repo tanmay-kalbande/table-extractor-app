@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Extractor - Extract Tables from Webpages</title>
+    <meta name="description" content="Extract tables from any webpage URL with the Table Extractor app. Easy and efficient table extraction using Flask, BeautifulSoup, and jQuery DataTables.">
+    <meta name="keywords" content="Table Extractor, Web Scraping, DataTables, Flask, BeautifulSoup, jQuery">
+    <meta name="author" content="Tanmay Kalbande">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='images/leopp.png') }}" type="image/png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Table Extractor</h1>
+    <p>Extract tables from any webpage URL!</p>
+</header>
+
+<main>
+    <form id="extractForm">
+        <div class="form-group">
+            <label for="url">URL:</label>
+            <input type="text" id="url" name="url" placeholder="Enter URL of the webpage" required>
+        </div>
+
+        <div class="form-group">
+            <label for="tableIndex">Table Index:</label>
+            <input type="number" id="tableIndex" name="tableIndex" min="0" value="0" placeholder="Enter index of the table (default: 0)">
+        </div>
+
+        <button type="button" onclick="extractTable()">Extract Table</button>
+    </form>
+
+    <div id="result" class="error-message"></div>
+
+    <div id="table-container"></div>
+
+    <div class="download-buttons" id="downloadButtons">
+        <button onclick="downloadData('csv')">Download as CSV</button>
+    </div>
+
+    <div class="additional-instructions">
+        <h2>Additional Instructions</h2>
+        <p>Make sure the URL is accessible and contains the desired table. Specify the table index (default is 0) to extract a specific table if the webpage has multiple tables.</p>
+    </div>
+</main>
+
+<!-- Footer styles -->
+<footer>
+    <div class="social-icons">
+        <a href="https://github.com/tanmay-kalbande?tab=repositories" target="_blank">
+            <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub">
+        </a>
+        <a href="https://www.linkedin.com/in/tanmay-kalbande" target="_blank">
+            <img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="LinkedIn">
+        </a>
+    </div>
+
+    <p>&copy; 2024 Table Extractor</p>
+    <p>Contact: devtanmay@proton.me</p>
+    <p>Attribution: This web application uses Flask, BeautifulSoup, jQuery, and DataTables.</p>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

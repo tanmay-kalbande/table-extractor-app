@@ -1,0 +1,286 @@
+/* General styles */
+body {
+    font-family: Consolas, monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #EDEDED;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #191919;
+    color: white;
+    text-align: center;
+    padding: 0.1rem 0;
+}
+
+main {
+    padding: 2rem;
+    flex: 1;
+    min-height: calc(100vh - 19rem);
+    position: relative;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #001524;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 0.8rem;
+    box-sizing: border-box;
+    border: 4px solid #ccc;
+    border-radius: 5px;
+    font-weight: bold; /* Added to make text bold */
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    background-color: #DA0037; /* Red */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #444444; /* Grey */
+}
+
+.error-message {
+    color: red;
+    margin-top: 1rem;
+}
+
+.download-buttons {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.download-buttons button {
+    padding: 0.8rem 1.5rem;
+    background-color: #DA0037; /* Red */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 1rem; /* Add margin between buttons */
+    display: none; /* Initially hide the button */
+}
+
+.download-buttons button:hover {
+    background-color: #444444; /* Grey */
+}
+
+/* Additional style for the button when there is content in the table */
+#table-container:empty + .download-buttons button {
+    display: none; /* Hide the button when there is no content in the table */
+}
+
+#table-container:not(:empty) + .download-buttons button {
+    display: inline-block; /* Show the button when there is content in the table */
+}
+
+.additional-instructions {
+    margin-top: 2rem;
+}
+
+/* DataTable styles */
+table.dataTable {
+    background-color: #171717; /* Dark Grey */
+    color: white;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+table.dataTable thead th {
+    background-color: #444444; /* Grey */
+    color: white;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+table.dataTable tbody tr.even {
+    background-color: #171717; /* Dark Grey */
+}
+
+table.dataTable tbody tr.odd {
+    background-color: #171717; /* Dark Grey */
+}
+
+table.dataTable tbody tr:hover {
+    background-color: #444444; /* Grey */
+}
+
+table.dataTable tbody td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    color: white;
+}
+
+/* Selection effect */
+::selection {
+    background-color: #DA0037; /* Red - adjust this to match your theme */
+    color: white; /* Text color inside the selection */
+}
+
+/* Footer styles */
+footer {
+    background-color: #191919; /* Grey */
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* For small screens */
+@media only screen and (max-width: 600px) {
+    main {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        padding: 0.5rem;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        padding: 0.5rem 1rem;
+        margin-top: 1rem;
+    }
+
+    .error-message,
+    .additional-instructions {
+        margin-top: 1rem;
+    }
+
+    .download-buttons {
+        margin-top: 1rem;
+    }
+
+    .download-buttons button {
+        padding: 0.5rem 1rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        background-color: #DA0037; /* Red */
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: none; /* Initially hide the button */
+    }
+
+    .download-buttons button:hover {
+        background-color: #444444; /* Grey */
+    }
+
+    .download-buttons button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    /* Additional style for the button when there is content in the table */
+    #table-container:not(:empty) + .download-buttons button {
+        display: inline-block; /* Show the button when there is content in the table */
+    }
+
+    /* Change the table color palette for small screens */
+    table.dataTable {
+        background-color: #EDEDED; /* Light Grey */
+        color: #191919; /* Dark Grey */
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    table.dataTable thead th {
+        background-color: #444444; /* Grey */
+        color: white;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+    }
+
+    table.dataTable tbody tr.even {
+        background-color: #EDEDED; /* Light Grey */
+    }
+
+    table.dataTable tbody tr.odd {
+        background-color: #EDEDED; /* Light Grey */
+    }
+
+    table.dataTable tbody tr:hover {
+        background-color: #444444; /* Grey */
+    }
+
+    table.dataTable tbody td {
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+        color: #191919; /* Dark Grey */
+    }
+
+    table.dataTable {
+        font-size: 12px;
+        width: auto;
+    }
+
+    table.dataTable thead th,
+    table.dataTable tbody td {
+        padding: 6px;
+    }
+
+    .dataTables_filter,
+    .dataTables_length {
+        display: block;
+        margin-bottom: 1rem;
+    }
+    .dataTables_length label {
+        margin-right: 0.5rem;
+    }
+
+    /* Selection effect for small screens */
+    ::selection {
+        background-color: #DA0037; /* Red - adjust this to match your theme */
+        color: white; /* Text color inside the selection */
+    }
+}
+/* Footer styles */
+footer {
+    background-color: #191919; /* Grey */
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.social-icons {
+    margin-bottom: 1rem;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.social-icons img {
+    width: 30px; /* Adjust the size as needed */
+    height: 30px; /* Adjust the size as needed */
+}
